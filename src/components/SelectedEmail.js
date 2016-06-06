@@ -1,10 +1,15 @@
 import React from 'react';
 import PureComponent from 'react-pure-render/component';
+import store from '../store';
+import { deselectEmail } from '../reducer'
 
 export default class SelectedEmail extends PureComponent {
-
+  deselectEmail() {
+		store.dispatch( deselectEmail() )
+	}
 	render() {
 		const styles = this.getStyles();
+		console.log('test')
 		return (
 			<div style={ styles.wrapper }>
 				<h1 style={ styles.from }>{ this.props.from }</h1>
